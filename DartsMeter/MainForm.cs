@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace DartsMeter
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Bitmap bitmap;  // Declaring beatmap
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
