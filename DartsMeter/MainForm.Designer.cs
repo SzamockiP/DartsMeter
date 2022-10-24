@@ -217,7 +217,6 @@
             this.GPB_playerOne.TabIndex = 7;
             this.GPB_playerOne.TabStop = false;
             this.GPB_playerOne.Text = "Statystyki gracza1";
-            this.GPB_playerOne.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
