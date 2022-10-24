@@ -26,6 +26,7 @@ namespace DartsMeter
             Color color = bitmap.GetPixel(e.X, e.Y);  // Gets pixel value from point where cursor is
 
             // TODO: connect it with label counting points 
+            // Test of getting old version of commit
             Console.WriteLine(calculateCurrentPoint(color));
         }
 
