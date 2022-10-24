@@ -14,23 +14,24 @@ namespace DartsMeter
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             // Creating new bitmap
-            bitmap = new Bitmap(DartsMeter.Properties.Resources.tarcza_alfa, new Size(pictureBox1.ClientSize.Width, pictureBox1.ClientSize.Height));  
-
+            bitmap = new Bitmap(Properties.Resources.tarcza_alfa,
+                                new Size(PB_dartBoard.ClientSize.Width, PB_dartBoard.ClientSize.Height));
         }
 
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        private void PB_dartBoard_MouseClick(object sender, MouseEventArgs e)
         {
             Color color = bitmap.GetPixel(e.X, e.Y);  // Gets pixel value from point where cursor is
 
+            // TODO: connect it with label counting points 
             Console.WriteLine(calculateCurrentPoint(color));
         }
 
         private string calculateCurrentPoint(Color color)  // Returns point value based on argb value
         {
-            switch (color.A)
+            switch (color.A)  // switch is based on alpha value of pixel
             {
                 case 255: return "single 20";
                 case 253: return "single 1";
