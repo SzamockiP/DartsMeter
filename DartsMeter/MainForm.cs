@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace DartsMeter
@@ -15,8 +16,8 @@ namespace DartsMeter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            bitmap = (Bitmap)Image.FromFile(@"C:\Users\Altin\source\repos\DartsMeter\DartsMeter\Properties\Sources\Images\tarcza_alfa.png");  // Creating new bitmap
-            bitmap = new Bitmap(bitmap, new Size(pictureBox1.ClientSize.Width, pictureBox1.ClientSize.Height));  
+            // Creating new bitmap
+            bitmap = new Bitmap(DartsMeter.Properties.Resources.tarcza_alfa, new Size(pictureBox1.ClientSize.Width, pictureBox1.ClientSize.Height));  
 
         }
 

@@ -109,8 +109,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Properties\Sources\Images\tarcza_alfa.png" />
-    <Content Include="Properties\Sources\Images\tarcza_bezalfy.png" />
+    <Content Include="tarcza_alfa.png" />
+    <Content Include="tarcza_bezalfy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
