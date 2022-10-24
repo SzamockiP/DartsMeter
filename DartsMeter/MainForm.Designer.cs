@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PB_dartBoard = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.LBL_PointsPlayerOne = new System.Windows.Forms.Label();
             this.MNS_navBar = new System.Windows.Forms.MenuStrip();
@@ -38,42 +38,42 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zasadyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoliniaSamobójczaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LBL_PointsPlayerTwo = new System.Windows.Forms.Label();
-            this.TXB_NamePlayerOne = new System.Windows.Forms.TextBox();
-            this.TXB_NamePlayerTwo = new System.Windows.Forms.TextBox();
             this.graToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zacznijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rozpocznijOdNowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LBL_PointsPlayerTwo = new System.Windows.Forms.Label();
+            this.TXB_NamePlayerOne = new System.Windows.Forms.TextBox();
+            this.TXB_NamePlayerTwo = new System.Windows.Forms.TextBox();
             this.BTN_gameControl = new System.Windows.Forms.Button();
             this.GPB_playerOne = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LBL_tourPointsPlayerOne = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.LBL_averagePointsPlayerOne = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LBL_tourPointsPlayerOne = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.GPB_playerTwo = new System.Windows.Forms.GroupBox();
             this.LBL_averagePointsPlayerTwo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.LBL_tourPointsPlayerTwo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_dartBoard)).BeginInit();
             this.MNS_navBar.SuspendLayout();
             this.GPB_playerOne.SuspendLayout();
             this.GPB_playerTwo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PB_dartBoard
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DartsMeter.Properties.Resources.tarcza_bezalfy;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 149);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.PB_dartBoard.BackColor = System.Drawing.Color.Transparent;
+            this.PB_dartBoard.Image = global::DartsMeter.Properties.Resources.tarcza_bezalfy;
+            this.PB_dartBoard.Location = new System.Drawing.Point(400, 149);
+            this.PB_dartBoard.Margin = new System.Windows.Forms.Padding(4);
+            this.PB_dartBoard.Name = "PB_dartBoard";
+            this.PB_dartBoard.Size = new System.Drawing.Size(500, 500);
+            this.PB_dartBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_dartBoard.TabIndex = 0;
+            this.PB_dartBoard.TabStop = false;
+            this.PB_dartBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PB_dartBoard_MouseClick);
             // 
             // LBL_PointsPlayerOne
             // 
@@ -96,7 +96,7 @@
             this.graToolStripMenuItem});
             this.MNS_navBar.Location = new System.Drawing.Point(0, 0);
             this.MNS_navBar.Name = "MNS_navBar";
-            this.MNS_navBar.Size = new System.Drawing.Size(1282, 30);
+            this.MNS_navBar.Size = new System.Drawing.Size(1282, 24);
             this.MNS_navBar.TabIndex = 2;
             this.MNS_navBar.Text = "menuStrip1";
             // 
@@ -106,19 +106,19 @@
             this.wczytajToolStripMenuItem,
             this.zapiszToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
-            this.plikToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
             // wczytajToolStripMenuItem
             // 
             this.wczytajToolStripMenuItem.Name = "wczytajToolStripMenuItem";
-            this.wczytajToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wczytajToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.wczytajToolStripMenuItem.Text = "Wczytaj";
             // 
             // zapiszToolStripMenuItem
             // 
             this.zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
-            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.zapiszToolStripMenuItem.Text = "Zapisz";
             // 
             // pomocToolStripMenuItem
@@ -127,20 +127,48 @@
             this.zasadyToolStripMenuItem,
             this.infoliniaSamobójczaToolStripMenuItem});
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.pomocToolStripMenuItem.Text = "Pomoc";
             // 
             // zasadyToolStripMenuItem
             // 
             this.zasadyToolStripMenuItem.Name = "zasadyToolStripMenuItem";
-            this.zasadyToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.zasadyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.zasadyToolStripMenuItem.Text = "Zasady";
             // 
             // infoliniaSamobójczaToolStripMenuItem
             // 
             this.infoliniaSamobójczaToolStripMenuItem.Name = "infoliniaSamobójczaToolStripMenuItem";
-            this.infoliniaSamobójczaToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.infoliniaSamobójczaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.infoliniaSamobójczaToolStripMenuItem.Text = "Infolinia samobójcza";
+            // 
+            // graToolStripMenuItem
+            // 
+            this.graToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zacznijToolStripMenuItem,
+            this.rozpocznijOdNowaToolStripMenuItem,
+            this.zakończToolStripMenuItem});
+            this.graToolStripMenuItem.Name = "graToolStripMenuItem";
+            this.graToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.graToolStripMenuItem.Text = "Gra";
+            // 
+            // zacznijToolStripMenuItem
+            // 
+            this.zacznijToolStripMenuItem.Name = "zacznijToolStripMenuItem";
+            this.zacznijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zacznijToolStripMenuItem.Text = "Zacznij";
+            // 
+            // rozpocznijOdNowaToolStripMenuItem
+            // 
+            this.rozpocznijOdNowaToolStripMenuItem.Name = "rozpocznijOdNowaToolStripMenuItem";
+            this.rozpocznijOdNowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rozpocznijOdNowaToolStripMenuItem.Text = "Rozpocznij od nowa";
+            // 
+            // zakończToolStripMenuItem
+            // 
+            this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
+            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zakończToolStripMenuItem.Text = "Zakończ";
             // 
             // LBL_PointsPlayerTwo
             // 
@@ -158,43 +186,15 @@
             // 
             this.TXB_NamePlayerOne.Location = new System.Drawing.Point(409, 31);
             this.TXB_NamePlayerOne.Name = "TXB_NamePlayerOne";
-            this.TXB_NamePlayerOne.Size = new System.Drawing.Size(100, 22);
+            this.TXB_NamePlayerOne.Size = new System.Drawing.Size(100, 20);
             this.TXB_NamePlayerOne.TabIndex = 4;
             // 
             // TXB_NamePlayerTwo
             // 
             this.TXB_NamePlayerTwo.Location = new System.Drawing.Point(800, 31);
             this.TXB_NamePlayerTwo.Name = "TXB_NamePlayerTwo";
-            this.TXB_NamePlayerTwo.Size = new System.Drawing.Size(100, 22);
+            this.TXB_NamePlayerTwo.Size = new System.Drawing.Size(100, 20);
             this.TXB_NamePlayerTwo.TabIndex = 5;
-            // 
-            // graToolStripMenuItem
-            // 
-            this.graToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zacznijToolStripMenuItem,
-            this.rozpocznijOdNowaToolStripMenuItem,
-            this.zakończToolStripMenuItem});
-            this.graToolStripMenuItem.Name = "graToolStripMenuItem";
-            this.graToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
-            this.graToolStripMenuItem.Text = "Gra";
-            // 
-            // zacznijToolStripMenuItem
-            // 
-            this.zacznijToolStripMenuItem.Name = "zacznijToolStripMenuItem";
-            this.zacznijToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.zacznijToolStripMenuItem.Text = "Zacznij";
-            // 
-            // rozpocznijOdNowaToolStripMenuItem
-            // 
-            this.rozpocznijOdNowaToolStripMenuItem.Name = "rozpocznijOdNowaToolStripMenuItem";
-            this.rozpocznijOdNowaToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.rozpocznijOdNowaToolStripMenuItem.Text = "Rozpocznij od nowa";
-            // 
-            // zakończToolStripMenuItem
-            // 
-            this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
-            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.zakończToolStripMenuItem.Text = "Zakończ";
             // 
             // BTN_gameControl
             // 
@@ -217,43 +217,42 @@
             this.GPB_playerOne.TabIndex = 7;
             this.GPB_playerOne.TabStop = false;
             this.GPB_playerOne.Text = "Statystyki gracza1";
-            this.GPB_playerOne.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(323, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Ilość punktów zdobyuta przez gracza w ostattniej turze";
-            // 
-            // LBL_tourPointsPlayerOne
-            // 
-            this.LBL_tourPointsPlayerOne.AutoSize = true;
-            this.LBL_tourPointsPlayerOne.Location = new System.Drawing.Point(49, 85);
-            this.LBL_tourPointsPlayerOne.Name = "LBL_tourPointsPlayerOne";
-            this.LBL_tourPointsPlayerOne.Size = new System.Drawing.Size(221, 16);
-            this.LBL_tourPointsPlayerOne.TabIndex = 1;
-            this.LBL_tourPointsPlayerOne.Text = "punkty sdobyte w ostatnich 3 rzutach";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(246, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Średnia punktów gracza w całym meczu";
             // 
             // LBL_averagePointsPlayerOne
             // 
             this.LBL_averagePointsPlayerOne.AutoSize = true;
             this.LBL_averagePointsPlayerOne.Location = new System.Drawing.Point(69, 216);
             this.LBL_averagePointsPlayerOne.Name = "LBL_averagePointsPlayerOne";
-            this.LBL_averagePointsPlayerOne.Size = new System.Drawing.Size(182, 16);
+            this.LBL_averagePointsPlayerOne.Size = new System.Drawing.Size(144, 13);
             this.LBL_averagePointsPlayerOne.TabIndex = 3;
             this.LBL_averagePointsPlayerOne.Text = "tutaj się mają pojawić średnie";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(199, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Średnia punktów gracza w całym meczu";
+            // 
+            // LBL_tourPointsPlayerOne
+            // 
+            this.LBL_tourPointsPlayerOne.AutoSize = true;
+            this.LBL_tourPointsPlayerOne.Location = new System.Drawing.Point(49, 85);
+            this.LBL_tourPointsPlayerOne.Name = "LBL_tourPointsPlayerOne";
+            this.LBL_tourPointsPlayerOne.Size = new System.Drawing.Size(183, 13);
+            this.LBL_tourPointsPlayerOne.TabIndex = 1;
+            this.LBL_tourPointsPlayerOne.Text = "punkty sdobyte w ostatnich 3 rzutach";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(264, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Ilość punktów zdobyuta przez gracza w ostattniej turze";
             // 
             // GPB_playerTwo
             // 
@@ -273,7 +272,7 @@
             this.LBL_averagePointsPlayerTwo.AutoSize = true;
             this.LBL_averagePointsPlayerTwo.Location = new System.Drawing.Point(69, 216);
             this.LBL_averagePointsPlayerTwo.Name = "LBL_averagePointsPlayerTwo";
-            this.LBL_averagePointsPlayerTwo.Size = new System.Drawing.Size(182, 16);
+            this.LBL_averagePointsPlayerTwo.Size = new System.Drawing.Size(144, 13);
             this.LBL_averagePointsPlayerTwo.TabIndex = 3;
             this.LBL_averagePointsPlayerTwo.Text = "tutaj się mają pojawić średnie";
             // 
@@ -282,7 +281,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(24, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(246, 16);
+            this.label6.Size = new System.Drawing.Size(199, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Średnia punktów gracza w całym meczu";
             // 
@@ -291,7 +290,7 @@
             this.LBL_tourPointsPlayerTwo.AutoSize = true;
             this.LBL_tourPointsPlayerTwo.Location = new System.Drawing.Point(49, 85);
             this.LBL_tourPointsPlayerTwo.Name = "LBL_tourPointsPlayerTwo";
-            this.LBL_tourPointsPlayerTwo.Size = new System.Drawing.Size(221, 16);
+            this.LBL_tourPointsPlayerTwo.Size = new System.Drawing.Size(183, 13);
             this.LBL_tourPointsPlayerTwo.TabIndex = 1;
             this.LBL_tourPointsPlayerTwo.Text = "punkty sdobyte w ostatnich 3 rzutach";
             // 
@@ -300,7 +299,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(323, 16);
+            this.label8.Size = new System.Drawing.Size(264, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Ilość punktów zdobyuta przez gracza w ostattniej turze";
             // 
@@ -317,14 +316,14 @@
             this.Controls.Add(this.TXB_NamePlayerOne);
             this.Controls.Add(this.LBL_PointsPlayerTwo);
             this.Controls.Add(this.LBL_PointsPlayerOne);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PB_dartBoard);
             this.Controls.Add(this.MNS_navBar);
             this.MainMenuStrip = this.MNS_navBar;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "DartsMeter";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PB_dartBoard)).EndInit();
             this.MNS_navBar.ResumeLayout(false);
             this.MNS_navBar.PerformLayout();
             this.GPB_playerOne.ResumeLayout(false);
@@ -338,7 +337,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PB_dartBoard;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label LBL_PointsPlayerOne;
         private System.Windows.Forms.MenuStrip MNS_navBar;
