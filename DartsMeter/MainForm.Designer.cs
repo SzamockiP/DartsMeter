@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.PB_dartBoard = new System.Windows.Forms.PictureBox();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.LBL_PointsPlayerOne = new System.Windows.Forms.Label();
             this.MNS_navBar = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,13 +39,13 @@
             this.infoliniaSamobójczaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zacznijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rozpocznijOdNowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LBL_PointsPlayerTwo = new System.Windows.Forms.Label();
             this.TXB_NamePlayerOne = new System.Windows.Forms.TextBox();
             this.TXB_NamePlayerTwo = new System.Windows.Forms.TextBox();
             this.BTN_gameControl = new System.Windows.Forms.Button();
             this.GPB_playerOne = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.LBL_averagePointsPlayerOne = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.LBL_tourPointsPlayerOne = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LBL_tourPointsPlayerTwo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_dartBoard)).BeginInit();
             this.MNS_navBar.SuspendLayout();
             this.GPB_playerOne.SuspendLayout();
@@ -80,7 +77,7 @@
             // LBL_PointsPlayerOne
             // 
             this.LBL_PointsPlayerOne.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LBL_PointsPlayerOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBL_PointsPlayerOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold);
             this.LBL_PointsPlayerOne.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.LBL_PointsPlayerOne.Location = new System.Drawing.Point(345, 76);
             this.LBL_PointsPlayerOne.Name = "LBL_PointsPlayerOne";
@@ -91,6 +88,7 @@
             // 
             // MNS_navBar
             // 
+            this.MNS_navBar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MNS_navBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MNS_navBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
@@ -98,7 +96,7 @@
             this.graToolStripMenuItem});
             this.MNS_navBar.Location = new System.Drawing.Point(0, 0);
             this.MNS_navBar.Name = "MNS_navBar";
-            this.MNS_navBar.Size = new System.Drawing.Size(1157, 24);
+            this.MNS_navBar.Size = new System.Drawing.Size(1157, 29);
             this.MNS_navBar.TabIndex = 2;
             this.MNS_navBar.Text = "menuStrip1";
             // 
@@ -114,14 +112,16 @@
             // wczytajToolStripMenuItem
             // 
             this.wczytajToolStripMenuItem.Name = "wczytajToolStripMenuItem";
-            this.wczytajToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.wczytajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wczytajToolStripMenuItem.Text = "Wczytaj";
+            this.wczytajToolStripMenuItem.Click += new System.EventHandler(this.wczytajToolStripMenuItem_Click);
             // 
             // zapiszToolStripMenuItem
             // 
             this.zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
-            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zapiszToolStripMenuItem.Text = "Zapisz";
+            this.zapiszToolStripMenuItem.Click += new System.EventHandler(this.zapiszToolStripMenuItem_Click);
             // 
             // pomocToolStripMenuItem
             // 
@@ -137,18 +137,19 @@
             this.zasadyToolStripMenuItem.Name = "zasadyToolStripMenuItem";
             this.zasadyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.zasadyToolStripMenuItem.Text = "Zasady";
+            this.zasadyToolStripMenuItem.Click += new System.EventHandler(this.zasadyToolStripMenuItem_Click);
             // 
             // infoliniaSamobójczaToolStripMenuItem
             // 
             this.infoliniaSamobójczaToolStripMenuItem.Name = "infoliniaSamobójczaToolStripMenuItem";
             this.infoliniaSamobójczaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.infoliniaSamobójczaToolStripMenuItem.Text = "Infolinia samobójcza";
+            this.infoliniaSamobójczaToolStripMenuItem.Click += new System.EventHandler(this.infoliniaSamobójczaToolStripMenuItem_Click);
             // 
             // graToolStripMenuItem
             // 
             this.graToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zacznijToolStripMenuItem,
-            this.rozpocznijOdNowaToolStripMenuItem,
             this.zakończToolStripMenuItem});
             this.graToolStripMenuItem.Name = "graToolStripMenuItem";
             this.graToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -159,23 +160,19 @@
             this.zacznijToolStripMenuItem.Name = "zacznijToolStripMenuItem";
             this.zacznijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zacznijToolStripMenuItem.Text = "Zacznij";
-            // 
-            // rozpocznijOdNowaToolStripMenuItem
-            // 
-            this.rozpocznijOdNowaToolStripMenuItem.Name = "rozpocznijOdNowaToolStripMenuItem";
-            this.rozpocznijOdNowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rozpocznijOdNowaToolStripMenuItem.Text = "Rozpocznij od nowa";
+            this.zacznijToolStripMenuItem.Click += new System.EventHandler(this.zacznijToolStripMenuItem_Click);
             // 
             // zakończToolStripMenuItem
             // 
             this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
             this.zakończToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zakończToolStripMenuItem.Text = "Zakończ";
+            this.zakończToolStripMenuItem.Click += new System.EventHandler(this.zakończToolStripMenuItem_Click);
             // 
             // LBL_PointsPlayerTwo
             // 
             this.LBL_PointsPlayerTwo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LBL_PointsPlayerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBL_PointsPlayerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold);
             this.LBL_PointsPlayerTwo.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.LBL_PointsPlayerTwo.Location = new System.Drawing.Point(680, 76);
             this.LBL_PointsPlayerTwo.Name = "LBL_PointsPlayerTwo";
@@ -211,12 +208,13 @@
             this.BTN_gameControl.BackColor = System.Drawing.Color.Crimson;
             this.BTN_gameControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BTN_gameControl.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BTN_gameControl.Location = new System.Drawing.Point(523, 96);
+            this.BTN_gameControl.Location = new System.Drawing.Point(523, 84);
             this.BTN_gameControl.Name = "BTN_gameControl";
-            this.BTN_gameControl.Size = new System.Drawing.Size(130, 50);
+            this.BTN_gameControl.Size = new System.Drawing.Size(130, 62);
             this.BTN_gameControl.TabIndex = 6;
-            this.BTN_gameControl.Text = "button1";
+            this.BTN_gameControl.Text = "Zacznij";
             this.BTN_gameControl.UseVisualStyleBackColor = false;
+            this.BTN_gameControl.Click += new System.EventHandler(this.BTN_gameControl_Click);
             // 
             // GPB_playerOne
             // 
@@ -232,17 +230,28 @@
             this.GPB_playerOne.Size = new System.Drawing.Size(267, 322);
             this.GPB_playerOne.TabIndex = 7;
             this.GPB_playerOne.TabStop = false;
-            this.GPB_playerOne.Text = "Statystyki gracza1";
+            this.GPB_playerOne.Text = "Statystyki gracza 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(9, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 26);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Punkty w ostatniej turze";
             // 
             // LBL_averagePointsPlayerOne
             // 
             this.LBL_averagePointsPlayerOne.AutoSize = true;
             this.LBL_averagePointsPlayerOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBL_averagePointsPlayerOne.Location = new System.Drawing.Point(65, 206);
+            this.LBL_averagePointsPlayerOne.Location = new System.Drawing.Point(6, 206);
             this.LBL_averagePointsPlayerOne.Name = "LBL_averagePointsPlayerOne";
-            this.LBL_averagePointsPlayerOne.Size = new System.Drawing.Size(151, 108);
+            this.LBL_averagePointsPlayerOne.Size = new System.Drawing.Size(98, 108);
             this.LBL_averagePointsPlayerOne.TabIndex = 3;
-            this.LBL_averagePointsPlayerOne.Text = "30";
+            this.LBL_averagePointsPlayerOne.Text = "0";
+            this.LBL_averagePointsPlayerOne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -259,11 +268,12 @@
             // 
             this.LBL_tourPointsPlayerOne.AutoSize = true;
             this.LBL_tourPointsPlayerOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBL_tourPointsPlayerOne.Location = new System.Drawing.Point(65, 72);
+            this.LBL_tourPointsPlayerOne.Location = new System.Drawing.Point(6, 70);
             this.LBL_tourPointsPlayerOne.Name = "LBL_tourPointsPlayerOne";
-            this.LBL_tourPointsPlayerOne.Size = new System.Drawing.Size(151, 108);
+            this.LBL_tourPointsPlayerOne.Size = new System.Drawing.Size(98, 108);
             this.LBL_tourPointsPlayerOne.TabIndex = 1;
-            this.LBL_tourPointsPlayerOne.Text = "46";
+            this.LBL_tourPointsPlayerOne.Text = "0";
+            this.LBL_tourPointsPlayerOne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GPB_playerTwo
             // 
@@ -279,17 +289,18 @@
             this.GPB_playerTwo.Size = new System.Drawing.Size(267, 322);
             this.GPB_playerTwo.TabIndex = 8;
             this.GPB_playerTwo.TabStop = false;
-            this.GPB_playerTwo.Text = "Statystyki gracza2";
+            this.GPB_playerTwo.Text = "Statystyki gracza 2";
             // 
             // LBL_averagePointsPlayerTwo
             // 
             this.LBL_averagePointsPlayerTwo.AutoSize = true;
             this.LBL_averagePointsPlayerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBL_averagePointsPlayerTwo.Location = new System.Drawing.Point(65, 206);
+            this.LBL_averagePointsPlayerTwo.Location = new System.Drawing.Point(6, 206);
             this.LBL_averagePointsPlayerTwo.Name = "LBL_averagePointsPlayerTwo";
-            this.LBL_averagePointsPlayerTwo.Size = new System.Drawing.Size(151, 108);
+            this.LBL_averagePointsPlayerTwo.Size = new System.Drawing.Size(98, 108);
             this.LBL_averagePointsPlayerTwo.TabIndex = 3;
-            this.LBL_averagePointsPlayerTwo.Text = "25";
+            this.LBL_averagePointsPlayerTwo.Text = "0";
+            this.LBL_averagePointsPlayerTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -305,11 +316,12 @@
             // 
             this.LBL_tourPointsPlayerTwo.AutoSize = true;
             this.LBL_tourPointsPlayerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBL_tourPointsPlayerTwo.Location = new System.Drawing.Point(65, 69);
+            this.LBL_tourPointsPlayerTwo.Location = new System.Drawing.Point(6, 70);
             this.LBL_tourPointsPlayerTwo.Name = "LBL_tourPointsPlayerTwo";
-            this.LBL_tourPointsPlayerTwo.Size = new System.Drawing.Size(151, 108);
+            this.LBL_tourPointsPlayerTwo.Size = new System.Drawing.Size(98, 108);
             this.LBL_tourPointsPlayerTwo.TabIndex = 1;
-            this.LBL_tourPointsPlayerTwo.Text = "34";
+            this.LBL_tourPointsPlayerTwo.Text = "0";
+            this.LBL_tourPointsPlayerTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -320,16 +332,6 @@
             this.label8.Size = new System.Drawing.Size(242, 26);
             this.label8.TabIndex = 0;
             this.label8.Text = "Punkty w ostatniej turze";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(9, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 26);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Punkty w ostatniej turze";
             // 
             // MainForm
             // 
@@ -346,9 +348,10 @@
             this.Controls.Add(this.LBL_PointsPlayerOne);
             this.Controls.Add(this.PB_dartBoard);
             this.Controls.Add(this.MNS_navBar);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.MNS_navBar;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "DartsMeter";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -367,7 +370,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PB_dartBoard;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label LBL_PointsPlayerOne;
         private System.Windows.Forms.MenuStrip MNS_navBar;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
@@ -378,7 +380,6 @@
         private System.Windows.Forms.ToolStripMenuItem infoliniaSamobójczaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem graToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zacznijToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rozpocznijOdNowaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
         private System.Windows.Forms.Label LBL_PointsPlayerTwo;
         private System.Windows.Forms.TextBox TXB_NamePlayerOne;
